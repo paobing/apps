@@ -1,9 +1,0 @@
-# 项目环境配置
-
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    # serverTimezone 设置数据库时区
-    url: jdbc:mysql://localhost:3306/user?serverTimezone=UTC
-    username: root
-    password: rootroot
