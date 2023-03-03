@@ -4,6 +4,9 @@ import com.paobing.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+/**
+ * MyBatis
+ */
 @Mapper
 public interface UserDao {
     @Select("select * from user_info where id = #{id}")
