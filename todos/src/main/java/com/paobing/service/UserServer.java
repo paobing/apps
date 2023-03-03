@@ -1,4 +1,4 @@
-package com.paobing.server;
+package com.paobing.service;
 
 public class UserServer {
 }
