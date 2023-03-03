@@ -24,11 +24,9 @@ class ApplicationTests {
     void contextLoads() {
         // MyBatis测试
         user = userDao.getById(2);
-        System.out.println(user);
 
         // MyBatis-Plus测试
         userInfo = userInfoDao.selectById(1);
-        System.out.println(userInfo);
     }
 
 }
