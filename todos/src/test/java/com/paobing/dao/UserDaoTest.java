@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  * MyBatis
- *
  * 1. 批量查询、分页需要自己实现
  */
 @SpringBootTest
@@ -21,13 +20,13 @@ public class UserDaoTest {
     private UserDao userDao;
 
     @Test
-    void testGetById(){
+    void testGetById() {
         // MyBatis测试
         user = userDao.getById(2);
     }
 
     @Test
-    void testGetAll(){
+    void testGetAll() {
         list = userDao.getAll();
         System.out.println(list);
     }
