@@ -1,5 +1,7 @@
 package com.paobing.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.paobing.domain.UserInfo;
@@ -20,7 +22,7 @@ public class UserInfoDaoTest {
     private UserInfoDao userInfoDao;
 
     @Test
-    void getRecordById(){
+    void getRecordById() {
         userInfo = userInfoDao.selectById(1);
     }
 
@@ -36,5 +38,20 @@ public class UserInfoDaoTest {
         System.out.println(page.getSize());
         System.out.println(page.getPages());
         System.out.println(page.getTotal());
+    }
+
+    @Test
+    void getRecordsBy() {
+        QueryWrapper<UserInfo> qw = new QueryWrapper();
+        qw.like("description", "中国");
+        userInfoDao.selectList(qw);
+    }
+
+    @Test
+    void getRecordsBy2() {
+        String params = "北京";
+        LambdaQueryWrapper<UserInfo> lqw = new LambdaQueryWrapper();
+        lqw.like(params!=null, UserInfo::getDescription, params);
+        userInfoDao.selectList(lqw);
     }
 }
