@@ -17,7 +17,8 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印到控制台
 
-env:
+configs:
   name: dev
+  num: 1999
   timeout: 3
   data-size: 10

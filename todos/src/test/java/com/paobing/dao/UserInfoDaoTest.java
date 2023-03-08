@@ -8,6 +8,8 @@ import com.paobing.domain.UserInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * MyBatis-Plus
@@ -15,6 +17,12 @@ import org.springframework.boot.test.context.SpringBootTest;
  * 1. 通过IPage实现了分页需要的常规参数
  */
 @SpringBootTest
+/**
+ * 针对测试操作添加事务
+ * 通过Rollback进行事务回滚，默认是true，如果是false则表示不回滚
+ */
+@Transactional
+@Rollback
 public class UserInfoDaoTest {
     private UserInfo userInfo;
 
