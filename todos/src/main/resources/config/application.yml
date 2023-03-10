@@ -11,6 +11,7 @@ spring:
   data:
     redis:
       url: redis://127.0.0.1:6379
+      client-type: jedis
 
 # mybatis-plus配置数据库自增策略
 mybatis-plus:
